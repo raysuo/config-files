@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# But not these directories and their contents
+!hypr/
+!hypr/**
+!kitty/
+!kitty/**
+!waybar/
+!waybar/**
+
+# Also keep the .gitignore file itself
+!.gitignore
