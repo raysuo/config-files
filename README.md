@@ -5,7 +5,7 @@ The script also installs packer.nvim and tmux tpm
 
 ### tmux
 
-To finish the tmux setup, go inside tmux and run <C-space> I, if the colorscheme changes then its working
+To finish the tmux setup, go inside tmux and run `<C-space> I`, if the colorscheme changes then its working
 
 ### nvim
 
