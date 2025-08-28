@@ -9,6 +9,7 @@
 !waybar/
 !waybar/**
 !tmux/
+!tmux/*
 !nvim/
 !nvim/**
 
