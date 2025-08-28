@@ -8,6 +8,10 @@
 !kitty/**
 !waybar/
 !waybar/**
+!tmux/
+!nvim/
+!nvim/**
+
 
 # Also keep the .gitignore file itself
 !.gitignore
