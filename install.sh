@@ -18,3 +18,12 @@ mv "$PWD/hypr" ~/.config/
 mv "$PWD/kitty" ~/.config/
 mv "$PWD/tmux" ~/.config/
 mv "$PWD/waybar" ~/.config/
+
+# Install packer.nvim and tmux package
+
+echo "Installing packer and tmux tpm"
+
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm 

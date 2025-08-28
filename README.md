@@ -1,22 +1,12 @@
-## Backup of existing configs
+## Starting
 
-mv ~/.config/nvim{,.bak}
-mv ~/.config/hypr{,.bak}
-mv ~/.config/kitty{,.bak}
-mv ~/.config/tmux{,.bak}
-mv ~/.config/waybar{,.bak}
+Run the `install.sh` script to create a backup of existing config and move the new config to the .conf directory
+The script also installs packer.nvim and tmux tpm
 
+### tmux
 
-## TMUX setup
+To finish the tmux setup, go inside tmux and run <C-space> I, if the colorscheme changes then its working
 
-For the tmux setup to work first run
-```git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm```
-Afterwards run tmux package installer by running <C-space> I, you know it worked if theme changed
+### nvim
 
-## NVIM setup
-For the nvim setup to work first run
-```
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-then open the packer.lua inside /lua/raysuo, run :so then :PackerSync
+To finish the nvim setup get in packer.lua inside /lua/raysuo and run `:so` and `:PackerSync`
