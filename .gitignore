@@ -12,7 +12,7 @@
 !tmux/*
 !nvim/
 !nvim/**
-
+!install.sh
 
 # Also keep the .gitignore file itself
 !.gitignore
