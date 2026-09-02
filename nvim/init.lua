@@ -1,3 +1,1 @@
-require("raysuo")
-require('lsp_config')
-require('cmp_config')
+require("raysuo.init")
