@@ -15,8 +15,8 @@ telescope.setup({
 })
 
 -- Harpoon ====================================================================
-local harpoon = require('harpoon')
-harpoon:setup()
+--local harpoon = require('harpoon')
+--harpoon:setup()
 
 -- Undotree (no setup needed, just plugin loaded)
 
@@ -25,7 +25,7 @@ harpoon:setup()
 -- Mason & LSP Configuration ==================================================
 require('mason').setup()
 require('mason-lspconfig').setup({
-    ensure_installed = { 'pyright', 'rust_analyzer', 'clangd', 'lua_ls' },
+    ensure_installed = { 'pyright', 'rust_analyzer', 'clangd', 'lua_ls', 'qmlls' },
     automatic_installation = true,
 })
 
@@ -136,3 +136,6 @@ vim.lsp.config("lua_ls", {
         },
     },
 })
+
+
+require('telescope').load_extension('frecency')
