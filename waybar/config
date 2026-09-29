@@ -289,7 +289,8 @@
   },
   "custom/power": {
     "format": "<span size='14pt' font='Material Icons'>power_settings_new</span>",
-    "on-click": "wlogout --protocol layer-shell -b 2",
-    "tooltip": false
+    "on-click": "shutdown now",
+    "tooltip": false,
+    "on-click-right": "reboot"
   }
 }
