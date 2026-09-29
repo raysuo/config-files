@@ -15,6 +15,7 @@
 !install.sh
 !cmt.sty
 !template.tex
+!texlive-packages.txt
 
 # Also keep the .gitignore file itself
 !.gitignore
