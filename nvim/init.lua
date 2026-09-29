@@ -66,11 +66,13 @@ vim.g.vimtex_compiler_latexmk = {
     build_dir = 'build',
     options = {
         '-pdf',
+        '-auxdir=build',
         '-file-line-error',
         '-synctex=1',
         '-interaction=nonstopmode',
     },
 }
+
 vim.g.UltiSnipsSnippetDirectories = { vim.fn.expand('~/.vim/UltiSnips') }
 vim.g.UltiSnipsExpandTrigger = '<tab>'
 vim.g.python3_host_prog = '/usr/bin/python3'
