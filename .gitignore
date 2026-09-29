@@ -16,6 +16,7 @@
 !cmt.sty
 !template.tex
 !texlive-packages.txt
+!tex.snippets
 
 # Also keep the .gitignore file itself
 !.gitignore
