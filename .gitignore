@@ -13,6 +13,8 @@
 !nvim/
 !nvim/**
 !install.sh
+!cmt.sty
+!template.tex
 
 # Also keep the .gitignore file itself
 !.gitignore
