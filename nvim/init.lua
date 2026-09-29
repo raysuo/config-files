@@ -37,6 +37,8 @@ vim.pack.add({
     'https://github.com/stevearc/conform.nvim',
     'https://github.com/nvim-tree/nvim-web-devicons',
     'https://github.com/nvim-telescope/telescope-frecency.nvim',
+    'https://github.com/lervag/vimtex.git',
+    'https://github.com/SirVer/ultisnips.git',
 })
 
 -- Tokyonight colorscheme
@@ -50,3 +52,25 @@ vim.opt.runtimepath:prepend(install_dir)
 require 'nvim-treesitter'.setup {
     install_dir = install_dir,
 }
+
+-- VimTeX config
+vim.g.tex_flavor = 'latex'
+vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_compiler_method = 'latexmk'
+vim.g.vimtex_compiler_continuous = 1
+
+
+vim.g.vimtex_view_general_options = '--fork'
+
+vim.g.vimtex_compiler_latexmk = {
+    build_dir = 'build',
+    options = {
+        '-pdf',
+        '-file-line-error',
+        '-synctex=1',
+        '-interaction=nonstopmode',
+    },
+}
+vim.g.UltiSnipsSnippetDirectories = { vim.fn.expand('~/.vim/UltiSnips') }
+vim.g.UltiSnipsExpandTrigger = '<tab>'
+vim.g.python3_host_prog = '/usr/bin/python3'
