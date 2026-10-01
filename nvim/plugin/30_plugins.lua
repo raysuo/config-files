@@ -85,22 +85,22 @@ require('conform').setup({
 })
 
 -- Obsidian ===================================================================
-require('obsidian').setup({
-    workspaces = {
-        {
-            name = 'personal',
-            path = '~/obsidian',
-        },
-    },
-    templates = {
-        subdir = 'templates',
-        date_format = '%Y-%m-%d',
-        time_format = '%H:%M',
-    },
-    follow_url_func = function(url)
-        vim.fn.jobstart({ 'xdg-open', url })
-    end,
-})
+--require('obsidian').setup({
+--    workspaces = {
+--        {
+--            name = 'personal',
+--            path = '~/obsidian',
+--        },
+--    },
+--    templates = {
+--        subdir = 'templates',
+--        date_format = '%Y-%m-%d',
+--        time_format = '%H:%M',
+--    },
+--    follow_url_func = function(url)
+--        vim.fn.jobstart({ 'xdg-open', url })
+--    end,
+--})
 
 -- LSP Server Configurations ==================================================
 -- Python

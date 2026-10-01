@@ -22,7 +22,6 @@ vim.pack.add({
     'https://github.com/nvim-lua/plenary.nvim',
     'https://github.com/folke/tokyonight.nvim',
     'https://github.com/nvim-treesitter/nvim-treesitter',
-    -- 'https://github.com/theprimeagen/harpoon',
     'https://github.com/mbbill/undotree',
     'https://github.com/tpope/vim-fugitive',
     'https://github.com/christoomey/vim-tmux-navigator',
@@ -39,6 +38,7 @@ vim.pack.add({
     'https://github.com/nvim-telescope/telescope-frecency.nvim',
     'https://github.com/lervag/vimtex.git',
     'https://github.com/SirVer/ultisnips.git',
+    'https://github.com/ThePrimeagen/harpoon',
 })
 
 -- Tokyonight colorscheme

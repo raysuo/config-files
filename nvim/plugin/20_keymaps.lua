@@ -72,6 +72,7 @@ nmap('<leader>fh', '<cmd>Telescope help_tags<CR>', 'Find help')
 
 -- Harpoon
 nmap('<leader>a', function() require('harpoon.mark').add_file() end, 'Harpoon add')
+nmap('<C-e>', function() require('harpoon.ui').toggle_quick_menu() end, 'Harpoon menu')
 nmap('<C-h>', function() require('harpoon.ui').nav_file(1) end, 'Harpoon 1')
 nmap('<C-t>', function() require('harpoon.ui').nav_file(2) end, 'Harpoon 2')
 nmap('<C-n>', function() require('harpoon.ui').nav_file(3) end, 'Harpoon 3')
