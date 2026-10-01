@@ -13,18 +13,15 @@ mv ~/.config/waybar{,.bak}
 echo "Moving new config files into ~/.config/"
 
 # Move the new config files
-mv "$PWD/nvim" ~/.config/
-mv "$PWD/hypr" ~/.config/
-mv "$PWD/kitty" ~/.config/
-mv "$PWD/tmux" ~/.config/
-mv "$PWD/waybar" ~/.config/
+cp "$PWD/nvim" ~/.config/
+cp "$PWD/hypr" ~/.config/
+cp "$PWD/kitty" ~/.config/
+cp "$PWD/tmux" ~/.config/
+cp "$PWD/waybar" ~/.config/
 
 # Install packer.nvim and tmux package
 
-echo "Installing packer and tmux tpm"
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+echo "Installing tmux tpm"
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm 
 
