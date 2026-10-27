@@ -229,5 +229,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("kitty", { workspace = "2 silent" })
 
     --hl.exec_cmd("swww-daemon & sleep 0.1 & sww img ~/Downloads/wallpaper2.jpg & wal -i ~/Downloads/wallpaper2.jpg")
-    hl.exec_cmd("mako & systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("swaync & systemctl --user start hyprpolkitagent")
 end)
