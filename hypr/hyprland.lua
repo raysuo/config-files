@@ -155,7 +155,7 @@ hl.config({
     },
     -- See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
     dwindle = {
-        preserve_split = true,-- # You probably want this
+        preserve_split = true, -- # You probably want this
     },
     -- See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
     master = {
@@ -163,8 +163,8 @@ hl.config({
     },
     -- https://wiki.hyprland.org/Configuring/Variables/#misc
     misc = {
-        force_default_wallpaper = 0,-- # Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo = true,-- # If true disables the random hyprland logo / anime girl background. :(
+        force_default_wallpaper = 0,  -- # Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_hyprland_logo = true, -- # If true disables the random hyprland logo / anime girl background. :(
     },
     --#############################
     --## WINDOWS AND WORKSPACES ###
@@ -191,9 +191,43 @@ hl.config({
     -- Fix for Firefox (which often uses "Firefox" as the class)
 })
 
-hl.on("hyprland.start", function()
-    hl.exec_cmd("waybar & hyprpaper & kitty")
-    hl.exec_cmd("swww-daemon & sleep 0.1 & sww img ~/Downloads/wallpaper2.jpg & wal -i ~/Downloads/wallpaper2.jpg")
-    hl.exec_cmd("mako & systemctl --user start hyprpolkitagent")
+-- Make extensions appear on top of the window and not on the side
+hl.on("window.open", function(w)
+    if w.class ~= "firefox" then return end
+    if w.initial_title ~= "Mozilla Firefox" then return end
+
+    local ff_windows = hl.get_windows({ class = "firefox" })
+    if #ff_windows <= 1 then return end
+
+    hl.dispatch(hl.dsp.window.float({ action = "set", window = w }))
+
+    local sub
+    sub = hl.on("window.title", function(tw)
+        if tw.address ~= w.address then return end
+        if tw.title == ""
+            or tw.title == "Mozilla Firefox"
+            or tw.title == "about:blank"
+            or tw.title:match("^about:.*Mozilla Firefox$") then
+            return
+        end
+
+        sub:remove()
+
+        if tw.title:match("^Extension:") then
+            hl.dispatch(hl.dsp.window.resize({ x = 800, y = 600, window = tw }))
+            hl.dispatch(hl.dsp.window.center({ window = tw }))
+            hl.dispatch(hl.dsp.focus({ window = tw }))
+        else
+            hl.dispatch(hl.dsp.window.float({ action = "unset", window = tw }))
+        end
+    end)
 end)
 
+hl.on("hyprland.start", function()
+    hl.exec_cmd("waybar & hyprpaper")
+    hl.exec_cmd("firefox", { workspace = "1 silent" })
+    hl.exec_cmd("kitty", { workspace = "2 silent" })
+
+    --hl.exec_cmd("swww-daemon & sleep 0.1 & sww img ~/Downloads/wallpaper2.jpg & wal -i ~/Downloads/wallpaper2.jpg")
+    hl.exec_cmd("mako & systemctl --user start hyprpolkitagent")
+end)
