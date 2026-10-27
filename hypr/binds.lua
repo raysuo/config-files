@@ -11,7 +11,7 @@ local notes = "obsidian"
 -- Regular binds (string format expected by your hl.bind)
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprlocksilent"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exit())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(browser))
